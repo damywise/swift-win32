@@ -48,7 +48,10 @@ let SwiftWin32: Package =
             .target(name: "SwiftWin32UI",
                     dependencies: ["SwiftWin32"],
                     path: "Sources/SwiftWin32UI",
-                    exclude: ["CMakeLists.txt"]),
+                    exclude: ["CMakeLists.txt"],
+                    swiftSettings: [
+                      .enableExperimentalFeature("AccessLevelOnImport"),
+                    ]),
             .executableTarget(name: "Calculator",
                               dependencies: ["SwiftWin32"],
                               path: "Examples/Calculator",
