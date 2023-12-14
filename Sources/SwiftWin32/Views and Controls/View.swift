@@ -409,6 +409,10 @@ public class View: Responder {
   internal var hWnd: HWND!
   internal var WndClass: WindowClass
 
+  public var handle: HWND! {
+    get { self.hWnd }
+  }
+
   internal var GWL_STYLE: LONG {
     get { GetWindowLongW(self.hWnd, WinSDK.GWL_STYLE) }
     set { _ = SetWindowLongW(self.hWnd, WinSDK.GWL_STYLE, newValue) }
