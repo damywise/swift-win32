@@ -59,6 +59,7 @@ let SwiftWin32: Package =
                                 "Info.plist",
                               ],
                               swiftSettings: [
+                                .enableExperimentalFeature("AccessLevelOnImport"),
                                 .unsafeFlags(["-parse-as-library"])
                               ]),
             .executableTarget(name: "UICatalog",
