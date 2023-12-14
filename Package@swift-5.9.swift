@@ -41,6 +41,9 @@ let SwiftWin32: Package =
                     linkerSettings: [
                       .linkedLibrary("User32"),
                       .linkedLibrary("ComCtl32"),
+                    ],
+                    swiftSettings: [
+                        .enableExperimentalFeature("AccessLevelOnImport")
                     ]),
             .target(name: "SwiftWin32UI",
                     dependencies: ["SwiftWin32"],
@@ -56,6 +59,7 @@ let SwiftWin32: Package =
                               ],
                               swiftSettings: [
                                 .unsafeFlags(["-parse-as-library"])
+            .enableExperimentalFeature("AccessLevelOnImport")
                               ]),
             .executableTarget(name: "UICatalog",
                               dependencies: ["SwiftWin32"],
